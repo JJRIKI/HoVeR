@@ -1,0 +1,28 @@
+{
+  "name": "hover",
+  "version": "1.0.0",
+  "description": "Housing Compliance Web application for reporting CC&R Violations",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JJRIKI/HoVeR.git"
+  },
+  "keywords": [
+    "HoVeR"
+  ],
+  "author": "James Bek",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JJRIKI/HoVeR/issues"
+  },
+  "homepage": "https://github.com/JJRIKI/HoVeR#readme",
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "bootstrap-scss": "^4.3.1",
+    "jquery": "^3.4.1",
+    "popper.js": "^1.16.0"
+  }
+}
