@@ -13,7 +13,7 @@ BEGIN
 	WHERE usr_id = user_id AND viol_cat_id = violation_category_id);
 	
 	UPDATE Violations
-	SET num_prev_violations = tot_p_viol
+	SET violation_num = tot_p_viol
 	WHERE violation_id= viol_id;	
 
 RETURN NEW;
@@ -29,7 +29,7 @@ EXECUTE PROCEDURE prev_viol();
 /*CREATE OR REPLACE FUNCTION which_consequence();
 RETURNS TRIGGER AS $total$
 DECLARE
-	tot_p_viol integer = NEW.num_prev_violations;
+	tot_p_viol integer = NEW.violation_num;
 	email_thresh integer = (SELECT num_for_email FROM Violation_category WHERE violation_category_id = NEW.violation_category_id);
 	call_thresh integer = (SELECT num_for_call FROM Violation_category WHERE violation_category_id = NEW.violation_category_id);
 	board_thresh integer = (SELECT num_for_fine FROM Violation_category WHERE violation_category_id = NEW.violation_category_id);
