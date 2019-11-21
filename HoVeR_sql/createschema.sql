@@ -25,7 +25,9 @@ CREATE TABLE Unit (
 
 CREATE TABLE Violation_category (
 	violation_category_id int PRIMARY KEY,
+	violation_name varchar(80),
 	num_for_fine int,
+	num_for_call int,
 	num_for_email int,
 	fine_baseline int
 );
