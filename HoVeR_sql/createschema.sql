@@ -38,7 +38,7 @@ CREATE TABLE Violations (
 	violation_category_id int REFERENCES Violation_category(violation_category_id),
 	violation_date date,
 	description varchar(160),
-	num_prev_violations int,
+	violation_num int,
 	reporter varchar(80)
 );
 
