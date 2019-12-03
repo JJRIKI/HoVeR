@@ -62,17 +62,13 @@
                 $dbconn = pg_connect("host=bminer-apps port=5444 dbname=compliance user=compliance password=cs1230");
 
                 $history = 'SELECT violation_id, last_name, first_name, violation_name, violation_date, description, reporter 
-                            FROM Violations left join Violation_category on Violations.violation__category_id = Violation_category.violation_category_id join c_users on Violations.user_id = c_users.user_id';
+                            FROM Violations left join Violation_category on Violations.violation_category_id = Violation_category.violation_category_id join c_users on Violations.user_id = c_users.user_id';
                 $result = $dbconn-> pg_query($dbconn, $history);
-                if ($result-> num_rows > 0) {
-                    while ($row = $result-> fetch_assoc()) {
-                        echo "<tr><td>". $row["Violation ID"]. "</td><td>". $row["Last Name"]. "</td><td>". $row["First Name"]. "</td><td>". $row["Type"]. "</td><td>". $row["Date"]. "</td><td>". $row["Details"]. "</td><td>". $row["Reporter"]. "</td>";
-                    }
-                    echo "</table>";
+                while ($row = $result-> fetch_assoc()) {
+                    echo "<tr><td>". $row["Violation ID"]. "</td><td>". $row["Last Name"]. "</td><td>". $row["First Name"]. "</td><td>". $row["Type"]. "</td><td>". $row["Date"]. "</td><td>". $row["Details"]. "</td><td>". $row["Reporter"]. "</td>";
                 }
-                else {
-                    echo "0 result";
-                }
+                echo "</table>";
+
                 $dbconn-> close();
             ?>
 			<tr>
