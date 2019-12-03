@@ -7,8 +7,8 @@ VALUES
         ('James', 'Bek', 'jbek@anonymous.com', 'password2', 'Home Owner');
 
 INSERT INTO c_users (first_name, last_name, email, password, user_type)
-VALUES                                                                                                                                                               ('Hannah', 'Fisk', 'hfisk@anonymous.com', 'password3', 'Board Member'); 
-
+VALUES
+        ('Hannah', 'Fisk', 'hfisk@anonymous.com', 'password3', 'Board Member'); 
 
 INSERT INTO Car (licence_plate, user_id, model, make, color, car_type) 
 VALUES
@@ -19,8 +19,8 @@ VALUES
         ('aaaa1111',(SELECT user_id FROM c_users WHERE user_id = 2),  'Honda', 'Mini-van', 'Silver', 'Medium');
 
 INSERT INTO Car (licence_plate, user_id, model, make, color, car_type)
-VALUES                                                                                                                                                               ('a1a1a1a1',(SELECT user_id FROM c_users WHERE user_id = 3),  'Dodge', 'Pick-up-truck', 'Black', 'Large'); 
-
+VALUES                                                                                                                     
+        ('a1a1a1a1',(SELECT user_id FROM c_users WHERE user_id = 3),  'Dodge', 'Pick-up-truck', 'Black', 'Large'); 
 
 INSERT INTO Unit (unit_num, user_id, garage_num, building_num) 
 VALUES
@@ -70,6 +70,23 @@ VALUES
 INSERT INTO Violations (user_id, violation_category_id, violation_date, description, reporter)
 VALUES
         ((SELECT user_id FROM c_users WHERE user_id = '2'), (SELECT violation_category_id FROM violation_category WHERE violation_category_id = 2), current_date, 'Parked in guest parking', 'Hannah Fisk');
+
+INSERT INTO Violations (user_id, violation_category_id, violation_date, description, reporter)
+VALUES
+        ((SELECT user_id FROM c_users WHERE user_id = '2'), (SELECT violation_category_id FROM violation_category WHERE violation_category_id = 2), current_date, 'Parked in guest parking', 'Hannah Fisk');
+
+INSERT INTO Violations (user_id, violation_category_id, violation_date, description, reporter)
+VALUES
+        ((SELECT user_id FROM c_users WHERE user_id = '2'), (SELECT violation_category_id FROM violation_category WHERE violation_category_id = 2), current_date, 'Parked in Red Lane', 'Dan Shank');
+
+INSERT INTO Violations (user_id, violation_category_id, violation_date, description, reporter)
+VALUES
+        ((SELECT user_id FROM c_users WHERE user_id = '2'), (SELECT violation_category_id FROM violation_category WHERE violation_category_id = 2), current_date, 'Parked in Red Lane', 'Hannah Fisk');
+
+INSERT INTO Violations (user_id, violation_category_id, violation_date, description, reporter)
+VALUES
+        ((SELECT user_id FROM c_users WHERE user_id = '2'), (SELECT violation_category_id FROM violation_category WHERE violation_category_id = 2), current_date, 'Parked in Manager Parking', 'Dan Shank');
+
 
 INSERT INTO Fines (fine_id, fine_amount) 
 VALUES
