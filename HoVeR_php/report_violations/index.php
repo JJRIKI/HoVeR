@@ -51,8 +51,9 @@
 						<option>Unit Number</option>
 						<option>Licence Plate</option>
 					</select>
-				</div>
-				<div class="form-group">
+                </div>
+                <form method="Post">
+				<!-- <div class="form-group"> -->
 					<label for="c_user">Violator</label>
                     <input type="search" class="form-control" id="c_users" placeholder="">
 
@@ -81,7 +82,8 @@
                         }
                     ?>
 
-				</div>
+                    </form>
+                    
 				<div class="form-group">
 					<label for="violation_type">Violation Type</label>
 					<select class="form-control" id="violation_type">
