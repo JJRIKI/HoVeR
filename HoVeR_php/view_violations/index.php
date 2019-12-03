@@ -67,11 +67,11 @@
                 // $rows = pg_fetch_array();
 
                 while ($row = pg_fetch_assoc($result)) {
-                    echo "<tr><td>". $row["Violation ID"]. "</td><td>". $row["Last Name"]. "</td><td>". $row["First Name"]. "</td><td>". $row["Type"]. "</td><td>". $row["Date"]. "</td><td>". $row["Details"]. "</td><td>". $row["Reporter"]. "</td>";
+                    echo "<tr><td>". $row["violation_id"]. "</td><td>". $row["last_name"]. "</td><td>". $row["first_name"]. "</td><td>". $row["violation_name"]. "</td><td>". $row["violation_date"]. "</td><td>". $row["description"]. "</td><td>". $row["reporter"]. "</td>";
                 }
                 echo "</table>";
 
-                $dbconn-> close();
+
             ?>
 			<tr>
 				<td>1</td>
