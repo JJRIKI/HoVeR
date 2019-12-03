@@ -68,7 +68,8 @@
     
                         if ($input_search = "Name") {
                             pg_prepare("type", $search_name);
-                            $user_id = pg_execute("type", array($input_violator));
+                            $pieces = explode(" ", $input_search);
+                            $user_id = pg_execute("type", array($pieces[0], $pieces[1]));
                         }
                         elseif ($input_search = "Unit Number") {
                             pg_prepare("type", $search_unit);
@@ -123,7 +124,7 @@
 
                 $dbconn = pg_connect("host=bminer-apps port=5444 dbname=compliance user=compliance password=cs1230");
                 $submit = 'INSERT INTO Violations (user_id, violation_category_id, violation_date, description, reporter) 
-                            VALUES ((SELECT user_id FROM c_users WHERE user_id = $1), (SELECT violation_category_id FROM violation_category WHERE violation_type = $2), CURRENT_DATE, $3, $4)';
+                            VALUES ((SELECT user_id FROM c_users WHERE user_id = $1), (SELECT violation_category_id FROM violation_category WHERE violation_name = $2), CURRENT_DATE, $3, $4)';
                 pg_prepare("insertion", $submit);
                 pg_execute("insertion", array($user_id, $input_type, $input_details, "Test Person"));
             ?>
