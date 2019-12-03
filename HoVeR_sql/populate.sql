@@ -53,19 +53,23 @@ VALUES
 
 INSERT INTO Violation_category (violation_category_id, violation_name, num_for_fine, num_for_call, num_for_email, fine_baseline)
 VALUES
-        (5, 'Noise', 3, 2, 1, 500);
+        (5, 'Pet', 3, 2, 1, 500);
 
 INSERT INTO Violations (user_id, violation_category_id, violation_date, description, reporter) 
 VALUES
-	((SELECT user_id FROM c_users WHERE user_id = '1'), (SELECT violation_category_id FROM violation_category WHERE violation_category_id = 1), '2019-11-11', 'Had a pet', 'Dan Shank'); --place a nested subquery here?
+	((SELECT user_id FROM c_users WHERE user_id = '1'), (SELECT violation_category_id FROM violation_category WHERE violation_category_id = 5), '2019-11-11', 'Had a pet', 'Dan Shank'); --place a nested subquery here?
 
 INSERT INTO Violations (user_id, violation_category_id, violation_date, description, reporter)
 VALUES
-        ((SELECT user_id FROM c_users WHERE user_id = '1'), (SELECT violation_category_id FROM violation_category WHERE violation_category_id = 1), '2019-11-12', 'Had a pet', 'Dan Shank');
+        ((SELECT user_id FROM c_users WHERE user_id = '1'), (SELECT violation_category_id FROM violation_category WHERE violation_category_id = 5), '2019-11-12', 'Had a pet', 'Dan Shank');
 
 INSERT INTO Violations (user_id, violation_category_id, violation_date, description, reporter)
 VALUES
-        ((SELECT user_id FROM c_users WHERE user_id = '2'), (SELECT violation_category_id FROM violation_category WHERE violation_category_id = 2), '2019-11-12', 'Parked in a redzone', 'Hannah Fisk');
+        ((SELECT user_id FROM c_users WHERE user_id = '2'), (SELECT violation_category_id FROM violation_category WHERE violation_category_id = 1), '2019-11-12', 'Parked in a redzone', 'Hannah Fisk');
+
+INSERT INTO Violations (user_id, violation_category_id, violation_date, description, reporter)
+VALUES
+        ((SELECT user_id FROM c_users WHERE user_id = '2'), (SELECT violation_category_id FROM violation_category WHERE violation_category_id = 1), current_date, 'Parked in guest parking', 'Hannah Fisk');
 
 INSERT INTO Violations (user_id, violation_category_id, violation_date, description, reporter)
 VALUES
@@ -73,11 +77,7 @@ VALUES
 
 INSERT INTO Violations (user_id, violation_category_id, violation_date, description, reporter)
 VALUES
-        ((SELECT user_id FROM c_users WHERE user_id = '2'), (SELECT violation_category_id FROM violation_category WHERE violation_category_id = 2), current_date, 'Parked in guest parking', 'Hannah Fisk');
-
-INSERT INTO Violations (user_id, violation_category_id, violation_date, description, reporter)
-VALUES
-        ((SELECT user_id FROM c_users WHERE user_id = '2'), (SELECT violation_category_id FROM violation_category WHERE violation_category_id = 2), current_date, 'Parked in Red Lane', 'Dan Shank');
+        ((SELECT user_id FROM c_users WHERE user_id = '2'), (SELECT violation_category_id FROM violation_category WHERE violation_category_id = 4), current_date, 'Destroyed Door', 'Dan Shank');
 
 INSERT INTO Violations (user_id, violation_category_id, violation_date, description, reporter)
 VALUES
@@ -85,7 +85,7 @@ VALUES
 
 INSERT INTO Violations (user_id, violation_category_id, violation_date, description, reporter)
 VALUES
-        ((SELECT user_id FROM c_users WHERE user_id = '2'), (SELECT violation_category_id FROM violation_category WHERE violation_category_id = 2), current_date, 'Parked in Manager Parking', 'Dan Shank');
+        ((SELECT user_id FROM c_users WHERE user_id = '2'), (SELECT violation_category_id FROM violation_category WHERE violation_category_id = 1), current_date, 'Parked in Manager Parking', 'Dan Shank');
 
 
 INSERT INTO Fines (fine_id, fine_amount) 
