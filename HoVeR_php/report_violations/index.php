@@ -59,8 +59,8 @@
 
                     <!-- On select id type search for user_id -->
                     <?php
-                        $input_search = $_POST['id_type'];
-                        $input_violator = $_POST['c_users'];
+                        $input_search = isset($_POST['id_type']);
+                        $input_violator = isset($_POST['c_users']);
                         $dbconn = pg_connect("host=bminer-apps port=5444 dbname=compliance user=compliance password=cs1230");
     
                         $search_name = 'SELECT user_id FROM c_users WHERE first_name = $1 AND last_name = $2';
@@ -83,7 +83,7 @@
                     ?>
 
                     </form>
-                    
+
 				<div class="form-group">
 					<label for="violation_type">Violation Type</label>
 					<select class="form-control" id="violation_type">
@@ -121,8 +121,8 @@
             
             <!-- On Submission -->
             <?php
-                $input_type = $_POST['violation_type'];
-                $input_details = $_POST['details'];
+                $input_type = isset($_POST['violation_type']);
+                $input_details = isset($_POST['details']);
 
                 $dbconn = pg_connect("host=bminer-apps port=5444 dbname=compliance user=compliance password=cs1230");
                 $submit = 'INSERT INTO Violations (user_id, violation_category_id, violation_date, description, reporter) 
