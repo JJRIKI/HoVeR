@@ -1,4 +1,4 @@
---function to update the number of pewvious violations
+--function to update the number of previous violations
 CREATE OR REPLACE FUNCTION prev_viol()
 RETURNS TRIGGER AS $total$
 DECLARE
