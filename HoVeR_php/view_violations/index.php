@@ -18,7 +18,7 @@
 		<span class="navbar-toggler-icon"></span>
 	</button>
 	<a class="navbar-brand" href="../home_page/index.html">HoVeR</a>
-				  
+
 	<div class="collapse navbar-collapse" id="navbarTogglerDemo03">
 		<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
 			<li class="nav-item active">
@@ -28,7 +28,7 @@
 				<a class="nav-link" href="../report_violations/index.html">Report Violation <span class="sr-only">(current)</span></a>
 			</li>
 			<li class="nav-item active">
-				<a class="nav-link" href="../view_violations/index.html">Violation History <span class="sr-only">(current)</span></a>
+				<a class="nav-link" href="../view_violations/index.php">Violation History <span class="sr-only">(current)</span></a>
 			</li>
 			<li class="nav-item active">
 				<a class="nav-link" href="../cc_and_r/index.html">CC&R's <span class="sr-only">(current)</span></a>
@@ -38,7 +38,7 @@
 			<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Logout</button>
 		</form>
 	</div>
-</nav>	
+</nav>
 
 <div class="table-responsive">
 	<table class="table table-striped table-sm">
@@ -61,7 +61,7 @@
             <?php
                 $dbconn = pg_connect("host=bminer-apps port=5444 dbname=compliance user=compliance password=cs1230");
 
-                $history = 'SELECT violation_id, last_name, first_name, violation_name, violation_date, description, reporter 
+                $history = 'SELECT violation_id, last_name, first_name, violation_name, violation_date, description, reporter
                             FROM Violations left join Violation_category on Violations.violation_category_id = Violation_category.violation_category_id join c_users on Violations.user_id = c_users.user_id';
                 $result = pg_query($dbconn, $history);
                 // $rows = pg_fetch_array();
@@ -73,7 +73,7 @@
 
 
             ?>
-			
+
 		</tbody>
 	</table>
 </div>
