@@ -14,7 +14,7 @@
     $pass = 'SELECT password FROM c_users';
 
     $email_check = pg_query($email) or die('Error message: ' . pg_last_error());
-    $pass_check = pg_query($pass) or die('Error message: ' . preg_last_error());
+    $pass_check = pg_query($pass) or die('Error message: ' . pg_last_error());
 
 
 
