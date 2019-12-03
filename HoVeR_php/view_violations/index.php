@@ -73,30 +73,7 @@
 
 
             ?>
-			<tr>
-				<td>1</td>
-				<td>James Bek</td>
-				<td>Pets</td>
-				<td>12/2/2019</td>
-				<td>Had a pet</td>
-				<td>Amy Dahlburg</td>
-			</tr>
-			<tr>
-				<td>2</td>
-				<td>Amy Dahlburg</td>
-				<td>Pets</td>
-				<td>12/2/2019</td>
-				<td>Had a pet</td>
-				<td>Hannah Fisk</td>
-			</tr>
-			<tr>
-				<td>3</td>
-				<td>Hannah Fisk</td>
-				<td>Pets</td>
-				<td>12/2/2019</td>
-				<td>Had a pet</td>
-				<td>James Bek</td>
-			</tr>
+			
 		</tbody>
 	</table>
 </div>
