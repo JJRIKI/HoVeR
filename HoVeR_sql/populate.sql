@@ -48,9 +48,11 @@ VALUES
         (3, 'Common Area Usage', 3, 2, 1, 300);
 
 INSERT INTO Violation_category (violation_category_id, violation_name, num_for_fine, num_for_call, num_for_email, fine_baseline)
+VALUES
         (4, 'Unit Conditions', 3, 2, 1, 400);
 
 INSERT INTO Violation_category (violation_category_id, violation_name, num_for_fine, num_for_call, num_for_email, fine_baseline)
+VALUES
         (5, 'Noise', 3, 2, 1, 500);
 
 INSERT INTO Violations (user_id, violation_category_id, violation_date, description, reporter) 
