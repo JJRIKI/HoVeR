@@ -63,7 +63,7 @@
 
                 $history = 'SELECT violation_id, last_name, first_name, violation_name, violation_date, description, reporter 
                             FROM Violations left join Violation_category on Violations.violation_category_id = Violation_category.violation_category_id join c_users on Violations.user_id = c_users.user_id';
-                $result = $dbconn-> pg_query($dbconn, $history);
+                $result = pg_query($dbconn, $history);
                 while ($row = $result-> fetch_assoc()) {
                     echo "<tr><td>". $row["Violation ID"]. "</td><td>". $row["Last Name"]. "</td><td>". $row["First Name"]. "</td><td>". $row["Type"]. "</td><td>". $row["Date"]. "</td><td>". $row["Details"]. "</td><td>". $row["Reporter"]. "</td>";
                 }
