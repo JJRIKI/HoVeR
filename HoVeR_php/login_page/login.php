@@ -8,9 +8,8 @@
 ?>
 <script>
 	function login() {
-		if (document.getElementById("email").value == 'jbek@anonymous.com') {
-			document.getElementById("login_page").removeAttribute("action");
-			document.getElementById("login_page").setAttribute("action","../hover_php/Homeowner/home_page/index.php");
+		if (document.getElementById("email") == 'jbek@anonymous.com') {
+			document.getElementById("login_page").setAttribute("action","../Homeowner/home_page/index.html");
 		}
 	}
 	</script>
@@ -29,7 +28,7 @@
 	</head>
 <body>
 
-<form class="container" action="../hover_php/Manager/home_page/index.php" method="post" id="login_page">
+<form class="container" action="../Manager/home_page/index.html" method="post" id="login_page">
 	<div class="form-row align-items-center">
 		<div class="col-sm">
 			<h1>Login</h1>
@@ -39,7 +38,7 @@
 
 		<div class="col-auto">
 			<div class="form-group">
-				<input type="text" class="form-control" name="" placeholder="user@example.com" id="email" name="email">
+				<input type="email" class="form-control" name="" placeholder="user@example.com" id="email">
 			</div>
 			<div class="form-group">
 				<input type="password" class="form-control" name="" placeholder="Password" id="password">

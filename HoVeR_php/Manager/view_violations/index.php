@@ -34,7 +34,7 @@
 				<a class="nav-link" href="../cc_and_r/index.html">CC&R's <span class="sr-only">(current)</span></a>
 			</li>
 		</ul>
-		<form class="form-inline my-2 my-lg-0" method="post" action="../log_out.php">
+		<form class="form-inline my-2 my-lg-0" method="post" action="../../login.php">
 			<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Logout</button>
 		</form>
 	</div>

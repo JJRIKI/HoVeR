@@ -12,6 +12,9 @@
 			document.getElementById("login_page").removeAttribute("action");
 			document.getElementById("login_page").setAttribute("action","../hover_php/Homeowner/home_page/index.php");
 		}
+		else if (document.getElementById("email").value == 'adahlberg@westmont.edu') {
+			document.getElementById("login_page").setAttribute("action","../hover_php/Board Member/home_page/index.php");
+		}
 	}
 	</script>
 <!DOCTYPE html>
