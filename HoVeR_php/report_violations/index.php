@@ -126,7 +126,7 @@
                 $submit = 'INSERT INTO Violations (user_id, violation_category_id, violation_date, description, reporter) 
                             VALUES ((SELECT user_id FROM c_users WHERE user_id = $1), (SELECT violation_category_id FROM violation_category WHERE violation_name = $2), CURRENT_DATE, $3, $4)';
                 pg_prepare("insertion", $submit);
-                pg_execute("insertion", array($user_id, $input_type, $input_details, "Test Person"));
+                pg_execute("insertion", array((integer) $user_id, (int) $input_type, $input_details, "Test Person"));
             ?>
 
 
