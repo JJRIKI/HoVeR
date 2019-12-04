@@ -66,7 +66,7 @@
 							ORDER BY violation_id';
                 $result = pg_query($dbconn, $history);
                 // $rows = pg_fetch_array();
-
+	
                 while ($row = pg_fetch_assoc($result)) {
                     echo "<tr><td>". $row["violation_id"]. "</td><td>". $row["last_name"]. "</td><td>". $row["first_name"]. "</td><td>". $row["violation_name"]. "</td><td>". $row["violation_date"]. "</td><td>". $row["description"]. "</td><td>". $row["reporter"]. "</td>";
                 }
