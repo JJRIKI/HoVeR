@@ -61,9 +61,9 @@
             <?php
                 $dbconn = pg_connect("host=bminer-apps port=5444 dbname=compliance user=compliance password=cs1230");
 
-                $history = 'SELECT violation_id, last_name, first_name, violation_name, violation_date, description, reporter
+                $history = "SELECT violation_id, last_name, first_name, violation_name, violation_date, description, reporter
                             FROM Violations left join Violation_category on Violations.violation_category_id = Violation_category.violation_category_id join c_users on Violations.user_id = c_users.user_id
-							WHERE email = "jbek@anonymous.com"';
+							WHERE email = 'jbek@anonymous.com'";
                 $result = pg_query($dbconn, $history);
                 // $rows = pg_fetch_array();
 
