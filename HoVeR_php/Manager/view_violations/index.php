@@ -51,6 +51,7 @@
 				<th>Date</th>
 				<th>Details</th>
 				<th>Reporter</th>
+				<th>Amount of Violatio</th>
             </tr>
 
 
@@ -68,7 +69,7 @@
                 // $rows = pg_fetch_array();
 
                 while ($row = pg_fetch_assoc($result)) {
-                    echo "<tr><td>". $row["violation_id"]. "</td><td>". $row["last_name"]. "</td><td>". $row["first_name"]. "</td><td>". $row["violation_name"]. "</td><td>". $row["violation_date"]. "</td><td>". $row["description"]. "</td><td>". $row["reporter"]. "</td>";
+                    echo "<tr><td>". $row["violation_id"]. "</td><td>". $row["last_name"]. "</td><td>". $row["first_name"]. "</td><td>". $row["violation_name"]. "</td><td>". $row["violation_date"]. "</td><td>". $row["description"]. "</td><td>". $row["reporter"]. "</td><td>". $row["violation_num"]. "</td>";
                 }
                 echo "</table>";
             ?>
