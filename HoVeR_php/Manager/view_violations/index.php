@@ -58,20 +58,19 @@
 		</thead>
 		<tbody>
 
-            <?php
+			<?php
                 $dbconn = pg_connect("host=bminer-apps port=5444 dbname=compliance user=compliance password=cs1230");
 
                 $history = 'SELECT violation_id, last_name, first_name, violation_name, violation_date, description, reporter
-                            FROM Violations left join Violation_category on Violations.violation_category_id = Violation_category.violation_category_id join c_users on Violations.user_id = c_users.user_id';
+							FROM Violations left join Violation_category on Violations.violation_category_id = Violation_category.violation_category_id join c_users on Violations.user_id = c_users.user_id
+							ORDER BY violation_id';
                 $result = pg_query($dbconn, $history);
                 // $rows = pg_fetch_array();
-
+	
                 while ($row = pg_fetch_assoc($result)) {
                     echo "<tr><td>". $row["violation_id"]. "</td><td>". $row["last_name"]. "</td><td>". $row["first_name"]. "</td><td>". $row["violation_name"]. "</td><td>". $row["violation_date"]. "</td><td>". $row["description"]. "</td><td>". $row["reporter"]. "</td>";
                 }
                 echo "</table>";
-
-
             ?>
 
 		</tbody>
