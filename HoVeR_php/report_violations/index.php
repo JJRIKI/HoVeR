@@ -56,32 +56,6 @@
 				<!-- <div class="form-group"> -->
 					<label for="c_user">Violator</label>
                     <input type="search" class="form-control" id="c_users" placeholder="">
-
-                    <!-- On select id type search for user_id -->
-                    <?php
-                        $input_search = $_POST['id_type'];
-                        $input_violator = $_POST['c_users'];
-                        $dbconn = pg_connect("host=bminer-apps port=5444 dbname=compliance user=compliance password=cs1230");
-    
-                        $search_name = 'SELECT user_id FROM c_users WHERE first_name = $1 AND last_name = $2';
-                        $search_unit = 'SELECT user_id FROM Unit WHERE unit_num = $1';
-                        $search_licence = 'SELECT user_id FROM Car WHERE licence_plate = $1';
-    
-                        if ($input_search = "Name") {
-                            pg_prepare("type", $search_name);
-                            $pieces = explode(" ", $input_search);
-                            $user_id = pg_execute("type", array($pieces[0], $pieces[1]));
-                        }
-                        elseif ($input_search = "Unit Number") {
-                            pg_prepare("type", $search_unit);
-                            $user_id = pg_execute("type", array($input_violator));        
-                        }
-                        elseif ($input_search = "Licence Plate") {
-                            pg_prepare("type", $search_licence);
-                            $user_id = pg_execute("type", array($input_violator));
-                        }
-                    ?>
-
                 </form>
 				<div class="form-group">
 					<label for="violation_type">Violation Type</label>
@@ -118,6 +92,30 @@
 		<div class="col-sm">
             <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Submit</button>
             
+            <!-- On select id type search for user_id -->
+            <?php
+                $input_search = $_POST['id_type'];
+                $input_violator = $_POST['c_users'];
+                $dbconn = pg_connect("host=bminer-apps port=5444 dbname=compliance user=compliance password=cs1230");
+    
+                $search_name = 'SELECT user_id FROM c_users WHERE first_name = $1 AND last_name = $2';
+                $search_unit = 'SELECT user_id FROM Unit WHERE unit_num = $1';
+                $search_licence = 'SELECT user_id FROM Car WHERE licence_plate = $1';
+    
+                if ($input_search = "Name") {
+                    pg_prepare("type", $search_name);
+                    $pieces = explode(" ", $input_search);
+                    $user_id = pg_execute("type", array($pieces[0], $pieces[1]));
+                }
+                elseif ($input_search = "Unit Number") {
+                    pg_prepare("type", $search_unit);
+                    $user_id = pg_execute("type", array($input_violator));        
+                }
+                elseif ($input_search = "Licence Plate") {
+                    pg_prepare("type", $search_licence);
+                    $user_id = pg_execute("type", array($input_violator));
+                }
+            ?>
             <!-- On Submission -->
             <?php
                 $input_type = $_POST['violation_type'];
