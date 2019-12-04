@@ -22,13 +22,13 @@
 	<div class="collapse navbar-collapse" id="navbarTogglerDemo03">
 		<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
 			<li class="nav-item active">
-				<a class="nav-link" href="../user_profile/index.html">User Profile <span class="sr-only">(current)</span></a>
+				<a class="nav-link" href="../userprofile.php">User Profile <span class="sr-only">(current)</span></a>
 			</li>
 			<li class="nav-item active">
-				<a class="nav-link" href="../report_violations/index.html">Report Violation <span class="sr-only">(current)</span></a>
+				<a class="nav-link" href="../report_violations_final/index.html">Report Violation <span class="sr-only">(current)</span></a>
 			</li>
 			<li class="nav-item active">
-				<a class="nav-link" href="../view_violations/index.php">Violation History <span class="sr-only">(current)</span></a>
+				<a class="nav-link" href="../view_violations_final/index.php">Violation History <span class="sr-only">(current)</span></a>
 			</li>
 			<li class="nav-item active">
 				<a class="nav-link" href="../../ccandrpage.php">CC&R's <span class="sr-only">(current)</span></a>
@@ -66,7 +66,7 @@
 							ORDER BY violation_id';
                 $result = pg_query($dbconn, $history);
                 // $rows = pg_fetch_array();
-	
+
                 while ($row = pg_fetch_assoc($result)) {
                     echo "<tr><td>". $row["violation_id"]. "</td><td>". $row["last_name"]. "</td><td>". $row["first_name"]. "</td><td>". $row["violation_name"]. "</td><td>". $row["violation_date"]. "</td><td>". $row["description"]. "</td><td>". $row["reporter"]. "</td>";
                 }

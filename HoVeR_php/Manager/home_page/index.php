@@ -22,7 +22,7 @@
     <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
       	<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
         	<li class="nav-item active">
-          		<a class="nav-link" href="../user.php">User Profile <span class="sr-only">(current)</span></a>
+          		<a class="nav-link" href="../userprofile.php">User Profile <span class="sr-only">(current)</span></a>
         	</li>
       	</ul>
       	<form class="form-inline my-2 my-lg-0" method="post" action="../../login.php">
@@ -35,11 +35,11 @@
     <div class="row-align-items-center">
         <div class="col">
 
-            <button type="button" class="btn btn-secondary btn-lg btn-block" onclick="location.href='../report_violations/index.html'">Report Violation</button>
+            <button type="button" class="btn btn-secondary btn-lg btn-block" onclick="location.href='../report_violations_final/index.html'">Report Violation</button>
 
-            <button type="button" class="btn btn-secondary btn-lg btn-block" onclick="location.href='../view_violations/index.php'">Violation History</button>
+            <button type="button" class="btn btn-secondary btn-lg btn-block" onclick="location.href='../view_violations_final/index.php'">Violation History</button>
 
-            <button type="button" class="btn btn-secondary btn-lg btn-block">CC&R's</button>
+            <button type="button" class="btn btn-secondary btn-lg btn-block" onclick="location.href='../../ccandrpage.php'">CC&R's</button>
 
         </div>
     </div>

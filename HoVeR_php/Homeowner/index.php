@@ -22,19 +22,19 @@
 	<div class="collapse navbar-collapse" id="navbarTogglerDemo03">
 		<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
 			<li class="nav-item active">
-				<a class="nav-link" href="../user_profile/index.html">User Profile <span class="sr-only">(current)</span></a>
+				<a class="nav-link" href="../userprofile.php">User Profile <span class="sr-only">(current)</span></a>
 			</li>
 			<li class="nav-item active">
-				<a class="nav-link" href="../report_violations/index.html">Report Violation <span class="sr-only">(current)</span></a>
+				<a class="nav-link" href="../Manager/report_violations_final/index.html">Report Violation <span class="sr-only">(current)</span></a>
 			</li>
 			<li class="nav-item active">
-				<a class="nav-link" href="../view_violations/index.php">Violation History <span class="sr-only">(current)</span></a>
+				<a class="nav-link" href="index.php">Violation History <span class="sr-only">(current)</span></a>
 			</li>
 			<li class="nav-item active">
-				<a class="nav-link" href="../cc_and_r/index.html">CC&R's <span class="sr-only">(current)</span></a>
+				<a class="nav-link" href="../ccandrpage.php">CC&R's <span class="sr-only">(current)</span></a>
 			</li>
 		</ul>
-		<form class="form-inline my-2 my-lg-0" method="post" action="../log_out.php">
+		<form class="form-inline my-2 my-lg-0" method="post" action="../login.php">
 			<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Logout</button>
 		</form>
 	</div>
