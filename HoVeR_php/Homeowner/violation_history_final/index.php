@@ -17,21 +17,18 @@
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
 	</button>
-	<a class="navbar-brand" href="../home_page/index.html">HoVeR</a>
+	<a class="navbar-brand" href="../home_page/index.php">HoVeR</a>
 
 	<div class="collapse navbar-collapse" id="navbarTogglerDemo03">
 		<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-			<li class="nav-item active">
+			<li class="nav-item">
 				<a class="nav-link" href="../userprofile.php">User Profile <span class="sr-only">(current)</span></a>
 			</li>
 			<li class="nav-item active">
-				<a class="nav-link" href="../report_violations_final/index.html">Report Violation <span class="sr-only">(current)</span></a>
+				<a class="nav-link" href="index.php">Violation History <span class="sr-only">(current)</span></a>
 			</li>
-			<li class="nav-item active">
-				<a class="nav-link" href="../view_violations_final/index.php">Violation History <span class="sr-only">(current)</span></a>
-			</li>
-			<li class="nav-item active">
-				<a class="nav-link" href="../../ccandrpage.php">CC&R's <span class="sr-only">(current)</span></a>
+			<li class="nav-item">
+				<a class="nav-link" href="../ccandrpage.php">CC&R's <span class="sr-only">(current)</span></a>
 			</li>
 		</ul>
 		<form class="form-inline my-2 my-lg-0" method="post" action="../../login.php">
@@ -51,7 +48,6 @@
 				<th>Date</th>
 				<th>Details</th>
 				<th>Reporter</th>
-				<th>Amount of Violatio</th>
             </tr>
 
 
@@ -59,19 +55,21 @@
 		</thead>
 		<tbody>
 
-			<?php
-                $dbconn = pg_connect("host=bminer-apps port=5444 dbname=compliance user=compliance password=cs1230");
+            <?php
+                $dbconn = pg_connect("host=bminer-apps port=5445 dbname=compliance user=compliance password=cs1230");
 
-                $history = 'SELECT violation_id, last_name, first_name, violation_name, violation_date, description, reporter
-							FROM Violations left join Violation_category on Violations.violation_category_id = Violation_category.violation_category_id join c_users on Violations.user_id = c_users.user_id
-							ORDER BY violation_id';
+                $history = "SELECT violation_id, last_name, first_name, violation_name, violation_date, description, reporter
+                            FROM Violations left join Violation_category on Violations.violation_category_id = Violation_category.violation_category_id join c_users on Violations.user_id = c_users.user_id
+							WHERE email = 'jbek@anonymous.com'";
                 $result = pg_query($dbconn, $history);
                 // $rows = pg_fetch_array();
 
                 while ($row = pg_fetch_assoc($result)) {
-                    echo "<tr><td>". $row["violation_id"]. "</td><td>". $row["last_name"]. "</td><td>". $row["first_name"]. "</td><td>". $row["violation_name"]. "</td><td>". $row["violation_date"]. "</td><td>". $row["description"]. "</td><td>". $row["reporter"]. "</td><td>". $row["violation_num"]. "</td>";
+                    echo "<tr><td>". $row["violation_id"]. "</td><td>". $row["last_name"]. "</td><td>". $row["first_name"]. "</td><td>". $row["violation_name"]. "</td><td>". $row["violation_date"]. "</td><td>". $row["description"]. "</td><td>". $row["reporter"]. "</td>";
                 }
                 echo "</table>";
+
+
             ?>
 
 		</tbody>

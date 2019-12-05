@@ -17,34 +17,35 @@
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
 	</button>
-	<a class="navbar-brand" href="../home_page/index.html">HoVeR</a>
-			  
+	<a class="navbar-brand" href="../home_page/index.php">HoVeR</a>
+
 	<div class="collapse navbar-collapse" id="navbarTogglerDemo03">
 		<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-			<li class="nav-item active">
-				<a class="nav-link" href="../user_profile/index.html">User Profile <span class="sr-only">(current)</span></a>
+			<li class="nav-item">
+				<a class="nav-link" href="../home_page/userprofile.php">User Profile <span class="sr-only">(current)</span></a>
 			</li>
 			<li class="nav-item active">
-				<a class="nav-link" href="../report_violations/index.html">Report Violation <span class="sr-only">(current)</span></a>
+				<a class="nav-link">Report Violation <span class="sr-only">(current)</span></a>
 			</li>
-			<li class="nav-item active">
-				<a class="nav-link" href="../view_violations/index.php">Violation History <span class="sr-only">(current)</span></a>
+			<li class="nav-item">
+				<a class="nav-link" href="../view_violations_final/index.php">Violation History <span class="sr-only">(current)</span></a>
 			</li>
-			<li class="nav-item active">
-				<a class="nav-link" href="../cc_and_r/index.html">CC&R's <span class="sr-only">(current)</span></a>
+			<li class="nav-item">
+				<a class="nav-link" href="../cc_and_r/ccandrpage.php">CC&R's <span class="sr-only">(current)</span></a>
 			</li>
 		</ul>
-		<form class="form-inline my-2 my-lg-0" method="post" action="../log_out.php">
+		<form class="form-inline my-2 my-lg-0" method="post" action="../../login.php">
 			<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Logout</button>
 		</form>
 	</div>
 </nav>
 
-<form class="container-fluid" method="POST">
+<div class="container">
 	<div class="row-align-items-center">
-		<div class="col">
+		<div class="col-md-6 col-md-offset-3">
 			<form>
 				<div class="form-group">
+					<p><br></p>
 					<label for="id_type">Identification</label>
 					<select multiple class="form-control" id="id_type">
 						<option>Name</option>
@@ -78,15 +79,18 @@
 		</div>
 	</div>
 
-	<div class="row align-items-end">
-		<div class="col-lg">
-			<button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Cancel</button>
-		</div>
+	<div class="row align-items-center">
 		<div class="col-sm">
-			<button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Submit</button>
+			<button class="btn btn-outline-danger my-2 my-sm-0" type="submit" onclick="location.href='../home_page/index.php'">Cancel</button>
+		<!--</div>
+		<div class="col-sm">-->
+			<button class="btn btn-outline-secondary my-2 my-sm-0" type="submit" onclick="location.href='success.php'">Submit</button>
 		</div>
 	</div>
-</form>
+</div>
+<p>
+	<br />
+</p>
 
 
 </body>
